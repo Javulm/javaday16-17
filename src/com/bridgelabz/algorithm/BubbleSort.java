@@ -20,12 +20,12 @@ public class BubbleSort {
 	 * the Array
 	 */
 	private void sort(int[] arr, int arrLength) {
-		System.out.println("Before Sorting");
+		System.out.println("Before Sorting:");
 		// prints the array before sorting
 		for (int i = 0; i < arrLength; i++)
 			System.out.print(arr[i] + " ");
 
-		System.out.println("\nAfter Sorting\n___________________\n");
+		System.out.println("\nAfter Sorting:\n");
 		for (int i = 0; i < arrLength - 1; i++) {
 			/**
 			 * this loop will execute i-1 times as the last index will be stored
