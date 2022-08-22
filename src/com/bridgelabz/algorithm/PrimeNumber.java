@@ -1,17 +1,16 @@
 package com.bridgelabz.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrimeNumber {
-	private static Scanner scanner = new Scanner(System.in);
-	public static void main(String[] args) {
-		/**
-		 * 1st enter the max no here we set the 1000
-		 */
+	List<String> primeList = new ArrayList<>();
+	List<Integer> list = new ArrayList<>();
+
+	public void primeNum() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter max number: ");
-		/**
-		 * String i/p Parses the string argument as a signed decimal integer.
-		 */
 		String input = scanner.nextLine();
 		int maxNumber = Integer.parseInt(input);
 		System.out.println("List of the prime number between 0 - " + maxNumber);
@@ -36,11 +35,32 @@ public class PrimeNumber {
 					break;
 				}
 			}
-			/**
-			 * condition check if its true then print num
-			 */
 			if (isPrime == true)
-				System.out.println(num);
+				primeList.add(Integer.toString(num));
+			if (isPalindrome(num))
+				list.add(num);
 		}
+		System.out.println();
+		System.out.println("Prime Numbers List: "+primeList);
+		System.out.println("Prime Pallimdromes are: "+list);
+	}
+	public static boolean isPalindrome(int number) {
+		int num = number;
+		int palindrome = 0;
+		while (number > 0) {
+			int remainder = number % 10;
+			palindrome = palindrome * 10 + remainder;
+			number /= 10;
+		}
+
+		if (num == palindrome)
+			return true;
+		else
+			return false;
+	}
+	public static void main(String[] args) {
+		System.out.println("welcome to prime number checker");
+		PrimeNumber prime = new PrimeNumber();
+		prime.primeNum();
 	}
 }
